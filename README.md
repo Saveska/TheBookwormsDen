@@ -1,2 +1,2 @@
 # The Bookworm's den
-### App for the UIKTP Project
+### FilteredBooks for the UIKTP Project
