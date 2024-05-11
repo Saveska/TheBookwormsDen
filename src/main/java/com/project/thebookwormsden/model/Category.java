@@ -12,7 +12,7 @@ public class Category {
     private Long category_id;
     private String category_name;
 
-    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "category")
     private List<Article> articles;
 
     public Category(Long category_id, String category_name, List<Article> articles) {
