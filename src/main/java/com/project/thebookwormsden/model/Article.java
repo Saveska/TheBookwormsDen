@@ -5,8 +5,11 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Data
+//@Data
 public class Article {
+
+    @Id
+    @GeneratedValue
     private Long article_id;
     private String article_name;
     @Enumerated(value = EnumType.STRING)
@@ -26,8 +29,8 @@ public class Article {
         this.article_id = article_id;
     }
 
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     public Long getArticle_id() {
         return article_id;
     }
