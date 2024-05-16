@@ -1,5 +1,6 @@
 package com.project.thebookwormsden.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.thebookwormsden.model.enums.ArticleType;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -19,6 +20,7 @@ public class Article {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
+    @JsonIgnore
     private Category category;
 
     public Article() {
@@ -29,7 +31,7 @@ public class Article {
         this.article_id = article_id;
     }
 
-//    @Id
+    //    @Id
 //    @GeneratedValue
     public Long getArticle_id() {
         return article_id;

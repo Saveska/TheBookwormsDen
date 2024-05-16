@@ -1,5 +1,6 @@
 package com.project.thebookwormsden.web;
 
+import com.project.thebookwormsden.model.Article;
 import com.project.thebookwormsden.model.Order;
 import com.project.thebookwormsden.service.OrderService;
 import org.springframework.http.ResponseEntity;
@@ -40,4 +41,29 @@ public class OrderController {
             return ResponseEntity.ok().build();
         return ResponseEntity.badRequest().build();
     }
+
+    @PostMapping("/add")
+    public ResponseEntity<Order> save(@RequestParam String address) {
+        Order order = orderService.createOrder(address);
+        if (order != null)
+            return ResponseEntity.ok().body(order);
+        return ResponseEntity.badRequest().build();
+    }
+
+    @PostMapping("/{orderId}/add-article/{articleId}")
+    public ResponseEntity<Order> addArticleToOrder(@PathVariable Long orderId, @PathVariable Long articleId) {
+        Order order = orderService.addArticleToOrder(orderId, articleId);
+        if (order == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok().body(order);
+    }
+
+    @GetMapping("/{orderId}/articles")
+    public ResponseEntity<List<Article>> findArticlesByOrderId(@PathVariable Long orderId) {
+        List<Article> articles = orderService.findArticlesByOrderId(orderId);
+        if (articles == null)
+            return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(articles);
+    }
+
 }
