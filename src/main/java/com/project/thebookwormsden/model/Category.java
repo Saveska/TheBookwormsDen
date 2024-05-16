@@ -3,6 +3,7 @@ package com.project.thebookwormsden.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -10,7 +11,7 @@ import java.util.List;
 public class Category {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long category_id;
     private String category_name;
 
@@ -21,6 +22,11 @@ public class Category {
         this.category_id = category_id;
         this.category_name = category_name;
         this.articles = articles;
+    }
+
+    public Category(String category_name) {
+        this.category_name = category_name;
+        this.articles = new ArrayList<>();
     }
 
     public Category() {

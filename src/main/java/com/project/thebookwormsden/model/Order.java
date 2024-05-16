@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -19,10 +21,20 @@ public class Order {
     private LocalDateTime createdAt;
     @Enumerated(value = EnumType.STRING)
     private Status status;
+    @ManyToMany
+    @JoinTable(
+            name = "order_article",
+            joinColumns = @JoinColumn(name = "order_id"),
+            inverseJoinColumns = @JoinColumn(name = "article_id")
+    )
+    private List<Article> articles;
+    Double totalPrice;
 
     public Order(String address, LocalDateTime createdAt) {
         this.address = address;
         this.createdAt = createdAt;
         this.status = Status.CREATED;
+        this.totalPrice = 0.0;
+        this.articles = new ArrayList<>();
     }
 }
