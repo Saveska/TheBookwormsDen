@@ -18,7 +18,7 @@ public class WishlistServiceImplementation implements WishlistService {
     }
 
     @Override
-    public List<Wishlist> getWishlistForUser(Long userId) {
+    public Wishlist getWishlistForUser(Long userId) {
         return userRepository.findByUserId(userId);
         // ovoj metod treba da se implementira vo user servisite
     }

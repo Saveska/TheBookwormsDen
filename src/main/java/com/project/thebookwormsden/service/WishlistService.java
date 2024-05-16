@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface WishlistService {
 
-    public List<Wishlist> getWishlistForUser(Long userId);
+    Wishlist getWishlistForUser(Long userId);
 
 }
