@@ -6,9 +6,11 @@ import lombok.Data;
 import java.util.List;
 
 @Entity
-@Data
+//@Data
 public class Category {
 
+    @Id
+    @GeneratedValue
     private Long category_id;
     private String category_name;
 
@@ -29,8 +31,8 @@ public class Category {
         this.category_id = category_id;
     }
 
-    @Id
-    @GeneratedValue
+//    @Id
+//    @GeneratedValue
     public Long getCategory_id() {
         return category_id;
     }
