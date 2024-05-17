@@ -1,17 +1,14 @@
 // noinspection ES6UnusedImports
 
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import FilteredBooks from './components/FilteredBooks';
-import Navbar from "./components/Navbar";
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import styles from "./index.css"
-import CategoryBar from "./components/CategoryBar";
+import styles from "./index.css";
 import MainView from "./views/MainView";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-      <MainView />
+    <MainView />
   </React.StrictMode>
 );
