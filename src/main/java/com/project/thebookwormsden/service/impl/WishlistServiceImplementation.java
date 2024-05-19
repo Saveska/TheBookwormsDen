@@ -26,8 +26,9 @@ public class WishlistServiceImplementation implements WishlistService {
 
     @Override
     public Wishlist getWishlistForUser(Long userId) {
-        return userRepository.findByUserId(userId);
+        //return userRepository.findByUserId(userId);
         // ovoj metod treba da se implementira vo user servisite
+        return null;
     }
 
     @Override
@@ -44,12 +45,12 @@ public class WishlistServiceImplementation implements WishlistService {
     @Override
     public void addArticleToWishlist(Long userId, Long articleId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalArgumentException("User not found"));
-        Wishlist wishlist = wishlistRepository.findByUser(user);
-        // ovoj metod treba da se implementira vo user servisite
-        if (wishlist != null) {
-            Article articleToAdd = articleRepository.findById(articleId).orElseThrow(() -> new IllegalArgumentException("Article not found"));
-            wishlist.getArticlesList().add(articleToAdd);
-            wishlistRepository.save(wishlist);
-        }
+//        Wishlist wishlist = wishlistRepository.findByUser(user);
+//        // ovoj metod treba da se implementira vo user servisite
+//        if (wishlist != null) {
+//            Article articleToAdd = articleRepository.findById(articleId).orElseThrow(() -> new IllegalArgumentException("Article not found"));
+//            wishlist.getArticlesList().add(articleToAdd);
+//            wishlistRepository.save(wishlist);
+//        }
     }
 }
