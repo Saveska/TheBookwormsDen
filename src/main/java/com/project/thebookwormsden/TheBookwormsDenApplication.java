@@ -14,9 +14,10 @@ public class TheBookwormsDenApplication {
         SpringApplication.run(TheBookwormsDenApplication.class, args);
     }
 
-    //@Bean
+//    @Bean
 //    PasswordEncoder passwordEncoder() {
-  //      return new BCryptPasswordEncoder(10);
-    //}
+//        return new BCryptPasswordEncoder(5);
+//    }
+
 
 }

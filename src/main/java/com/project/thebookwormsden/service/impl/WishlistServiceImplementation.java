@@ -7,6 +7,7 @@ import com.project.thebookwormsden.repository.ArticleRepository;
 import com.project.thebookwormsden.repository.UserRepository;
 import com.project.thebookwormsden.repository.WishlistRepository;
 import com.project.thebookwormsden.service.WishlistService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,7 +27,8 @@ public class WishlistServiceImplementation implements WishlistService {
 
     @Override
     public Wishlist getWishlistForUser(Long userId) {
-        //return userRepository.findByUserId(userId);
+        User user = this.userRepository.findById(userId)
+                .orElseThrow(() -> new UsernameNotFoundException("User not found."));
         // ovoj metod treba da se implementira vo user servisite
         return null;
     }
