@@ -1,9 +1,12 @@
 package com.project.thebookwormsden.model;
 
-import jakarta.persistence.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+@Data
+@NoArgsConstructor
 public class RatingPrimaryKey implements Serializable {
     private Long userId;
     private Long articleId;
