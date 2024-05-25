@@ -8,9 +8,7 @@ import java.util.List;
 
 @Entity
 @Data
-
 public class Category implements Serializable {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long category_id;
@@ -19,6 +17,6 @@ public class Category implements Serializable {
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     private List<Article> articles;
 
-    public Category() {}
 
+    public Category() {}
 }

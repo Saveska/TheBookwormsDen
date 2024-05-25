@@ -1,5 +1,6 @@
 package com.project.thebookwormsden.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.project.thebookwormsden.model.enums.ArticleType;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -12,7 +13,7 @@ import java.util.Set;
 public class Article implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Long article_id;
 
     private String article_name;
@@ -26,6 +27,7 @@ public class Article implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id")
+    @JsonIgnore
     private Category category;
 
     @ManyToMany
@@ -36,5 +38,4 @@ public class Article implements Serializable {
     private Set<Wishlist> wishlists;
 
     public Article() {}
-
 }
