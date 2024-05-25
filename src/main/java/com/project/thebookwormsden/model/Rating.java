@@ -6,10 +6,12 @@ import jakarta.persistence.Id;
 import jakarta.persistence.IdClass;
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Entity
 @Data
 @IdClass(RatingPrimaryKey.class)
-public class Rating {
+public class Rating implements Serializable {
     @Id
     private Long userId;
     @Id

@@ -10,8 +10,13 @@ import org.springframework.web.bind.annotation.*;
 public class ArticleController {
 
 
-    private ArticleService articleService;
-    private CategoryService categoryService;
+    private final ArticleService articleService;
+    private final CategoryService categoryService;
+
+    public ArticleController(ArticleService articleService, CategoryService categoryService) {
+        this.articleService = articleService;
+        this.categoryService = categoryService;
+    }
 
     @GetMapping("/articles")
     public ResponseEntity<?> getAllArticles() {

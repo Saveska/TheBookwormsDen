@@ -1,5 +1,6 @@
 package com.project.thebookwormsden.web;
 
+import com.project.thebookwormsden.exception.UserNotFoundException;
 import com.project.thebookwormsden.model.Wishlist;
 import com.project.thebookwormsden.service.WishlistService;
 import org.springframework.http.ResponseEntity;
@@ -17,10 +18,11 @@ public class WishlistController {
 
     @GetMapping("/forUser/{userId}")
     public ResponseEntity<Wishlist> getWishlistForUser(@PathVariable Long userId) {
-        Wishlist wishlist = wishlistService.getWishlistForUser(userId);
-        if (wishlist != null) {
+        Wishlist wishlist;
+        try {
+            wishlist = wishlistService.getWishlistForUser(userId);
             return ResponseEntity.ok(wishlist);
-        } else {
+        } catch (UserNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
     }
@@ -31,7 +33,7 @@ public class WishlistController {
             wishlistService.removeArticleFromWishlist(userId, articleId);
             return ResponseEntity.noContent().build();
         }
-        catch (IllegalArgumentException e) {
+        catch (UserNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
     }
@@ -41,7 +43,7 @@ public class WishlistController {
         try {
             wishlistService.addArticleToWishlist(userId, articleId);
             return ResponseEntity.ok().build();
-        } catch (IllegalArgumentException e) {
+        } catch (UserNotFoundException e) {
             return ResponseEntity.notFound().build();
         }
     }

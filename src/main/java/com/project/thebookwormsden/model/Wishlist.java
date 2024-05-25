@@ -3,21 +3,22 @@ package com.project.thebookwormsden.model;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
-public class Wishlist {
+public class Wishlist implements Serializable {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long wishlist_id;
 
     @OneToOne
     private User user;
 
-    @OneToMany
-    private List<Article> articlesList = new ArrayList<>();
+    @ManyToMany(mappedBy = "wishlists")
+    private Set<Article> articles;
 
+    public Wishlist() {}
 }
