@@ -35,7 +35,8 @@ public class WishlistServiceImplementation implements WishlistService {
 
     @Override
     public void removeArticleFromWishlist(Long userId, Long articleId) throws UserNotFoundException {
-        User user = userRepository.findById(userId).orElseThrow(() -> new UserNotFoundException("User not found"));
+        User user = userRepository.findById(userId).orElseThrow(() ->
+                new UserNotFoundException("User with id " + userId + " not found"));
         Wishlist wishlist = wishlistRepository.findWishlistByUser(user);
         if (wishlist != null) {
             Article articleToRemove = articleRepository.findById(articleId).orElseThrow(() ->

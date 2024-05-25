@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -18,9 +17,12 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String address;
+
     private LocalDateTime createdAt;
+
     @Enumerated(value = EnumType.STRING)
     private Status status;
+
     @ManyToMany
     @JoinTable(
             name = "order_article",
@@ -30,11 +32,8 @@ public class Order {
     private List<Article> articles;
     Double totalPrice;
 
-    public Order(String address, LocalDateTime createdAt) {
+    public Order(String address, LocalDateTime now) {
         this.address = address;
-        this.createdAt = createdAt;
-        this.status = Status.CREATED;
-        this.totalPrice = 0.0;
-        this.articles = new ArrayList<>();
+        this.createdAt = now;
     }
 }
