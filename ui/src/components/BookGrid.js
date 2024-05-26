@@ -3,10 +3,12 @@ import BookCard from "./BookCard";
 import booksData from "../data/booksData";
 import PaginationButtons from "./PaginationButtons";
 
-const BookGrid = ({ category, search }) => {
+const BookGrid = ({ category, search, dynamicStyles }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const booksPerPage = 9;
+  const booksPerPage = 18;
   const [filteredBooks, setFilteredBooks] = useState([]);
+  const [showPagination, setShowPagination] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
     const newFilteredBooks = booksData.filter((book) => {
@@ -18,6 +20,22 @@ const BookGrid = ({ category, search }) => {
     setFilteredBooks(newFilteredBooks);
     setCurrentPage(1);
   }, [category, search]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > lastScrollY) {
+        setShowPagination(true);
+      } else {
+        setShowPagination(false);
+      }
+      setLastScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
 
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
@@ -32,25 +50,27 @@ const BookGrid = ({ category, search }) => {
   };
 
   return (
-    <div className="flex flex-col justify-between">
+    <div className={`flex flex-col justify-between ${dynamicStyles}`}>
       <div className="grid grid-cols-3 row-span-3 gap-10">
         {currentBooks.length > 0 ? (
           currentBooks.map((book) => <BookCard key={book.id} book={book} />)
         ) : (
-          <div className="text-white">
+          <div>
             No <span className="font-bold">{category}</span> books found :(
           </div>
         )}
       </div>
-      <PaginationButtons
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        indexOfLastBook={indexOfLastBook}
-        filteredBooks={filteredBooks}
-        nextPage={nextPage}
-        prevPage={prevPage}
-        dynamicStyles="my-10"
-      />
+      {showPagination && (
+        <PaginationButtons
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          indexOfLastBook={indexOfLastBook}
+          filteredBooks={filteredBooks}
+          nextPage={nextPage}
+          prevPage={prevPage}
+          dynamicStyles="my-10 sticky bottom-10 fadeIn"
+        />
+      )}
     </div>
   );
 };
