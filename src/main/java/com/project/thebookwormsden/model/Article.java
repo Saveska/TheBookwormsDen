@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -38,4 +39,13 @@ public class Article implements Serializable {
     private Set<Wishlist> wishlists;
 
     public Article() {}
+
+    public Article(String article_name, ArticleType article_type, String description, Double price, Category category) {
+        this.article_name = article_name;
+        this.article_type = article_type;
+        this.description = description;
+        this.price = price;
+        this.category = category;
+        this.wishlists = new HashSet<>();
+    }
 }

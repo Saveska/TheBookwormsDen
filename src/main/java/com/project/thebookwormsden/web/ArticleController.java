@@ -1,5 +1,7 @@
 package com.project.thebookwormsden.web;
+
 import com.project.thebookwormsden.model.Article;
+import com.project.thebookwormsden.model.enums.ArticleType;
 import com.project.thebookwormsden.service.ArticleService;
 import com.project.thebookwormsden.service.CategoryService;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +43,20 @@ public class ArticleController {
     @GetMapping("/categories/{categoryId}/articles")
     public ResponseEntity<?> getArticlesByCategory(@PathVariable Long categoryId) {
         return ResponseEntity.ok(articleService.getArticlesByCategory(categoryId));
+    }
+
+    @PostMapping("/articles/add")
+    public ResponseEntity<Article> createArticle(
+            @RequestParam String name,
+            @RequestParam ArticleType articleType,
+            @RequestParam String description,
+            @RequestParam Double price,
+            @RequestParam Long categoryId) {
+
+        Article article = articleService.createArticle(name, articleType, description, price, categoryId);
+        if (article != null)
+            return ResponseEntity.ok().build();
+        return ResponseEntity.badRequest().build();
     }
 
 }
