@@ -53,7 +53,7 @@ const SingleBookView = ({ bookId, isOpen, onClose }) => {
     }
 
     return (
-      <div className="relative max-w-2xl p-8 bg-white border rounded-lg shadow-xl">
+      <div className="relative max-w-2xl p-8 bg-white shadow-xl">
         <div className="flex items-start justify-between mb-4">
           <div>
             <h2 className="text-2xl font-bold text-gray-900">{book.title}</h2>
@@ -103,7 +103,7 @@ const SingleBookView = ({ bookId, isOpen, onClose }) => {
         onClick={(e) => {
           e.stopPropagation();
         }}
-        className="relative z-50 w-full max-w-2xl mx-auto bg-white border rounded-lg shadow-lg"
+        className="relative z-50 w-full max-w-2xl mx-auto bg-white shadow-lg"
       >
         {renderBookDetails()}
       </div>

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styles from "./index.css";
 import MainView from "./views/MainView";
 import AuthView from "./views/AuthView";
+import ManagementView from "./views/ManagementView";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,6 +14,7 @@ root.render(
       <Routes>
         <Route path="/" element={<MainView />} />
         <Route path="/auth" element={<AuthView />} />
+        <Route path="/management" element={<ManagementView />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
