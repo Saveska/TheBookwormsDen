@@ -45,4 +45,9 @@ public class ArticleServiceImplementation implements ArticleService {
         Category category = categoryRepository.findById(categoryId).orElse(null);
         return articleRepository.save(new Article(name, articleType, description, price, category));
     }
+
+    @Override
+    public void deleteArticleById(Long id) {
+        this.articleRepository.deleteById(id);
+    }
 }

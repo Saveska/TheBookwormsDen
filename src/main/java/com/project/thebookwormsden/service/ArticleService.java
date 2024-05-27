@@ -14,4 +14,6 @@ public interface ArticleService {
     Article getArticleById(Long article_id);
 
     Article createArticle(String name, ArticleType articleType, String description, Double price, Long categoryId);
+
+    void deleteArticleById(Long id);
 }

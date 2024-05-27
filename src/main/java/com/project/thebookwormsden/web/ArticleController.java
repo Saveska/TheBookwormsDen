@@ -59,5 +59,14 @@ public class ArticleController {
         return ResponseEntity.badRequest().build();
     }
 
+    @DeleteMapping("/articles/delete/{id}")
+    public ResponseEntity deleteById(@PathVariable Long id) {
+        articleService.deleteArticleById(id);
+        Article deletedOrder = this.articleService.getArticleById(id);
+        if (deletedOrder == null)
+            return ResponseEntity.ok().build();
+        return ResponseEntity.badRequest().build();
+    }
+
 }
 
