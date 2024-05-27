@@ -47,7 +47,26 @@ public class ArticleServiceImplementation implements ArticleService {
     }
 
     @Override
+    public Article updateArticle(Long articleId, String name, ArticleType articleType, String description, Double price, Long categoryId) {
+        Article article = articleRepository.findById(articleId).orElse(null);
+        if (article != null) {
+            Category category = categoryRepository.findById(categoryId).orElse(null);
+            if (category != null) {
+                article.setArticle_name(name);
+                article.setArticle_type(articleType);
+                article.setDescription(description);
+                article.setPrice(price);
+                article.setCategory(category);
+                return articleRepository.save(article);
+            }
+        }
+        return null;
+    }
+
+
+
     public void deleteArticleById(Long id) {
         this.articleRepository.deleteById(id);
     }
+
 }
