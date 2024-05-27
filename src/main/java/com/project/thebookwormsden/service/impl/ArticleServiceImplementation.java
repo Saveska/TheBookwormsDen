@@ -50,15 +50,26 @@ public class ArticleServiceImplementation implements ArticleService {
     public Article updateArticle(Long articleId, String name, ArticleType articleType, String description, Double price, Long categoryId) {
         Article article = articleRepository.findById(articleId).orElse(null);
         if (article != null) {
-            Category category = categoryRepository.findById(categoryId).orElse(null);
-            if (category != null) {
+
+            if (name != null) {
                 article.setArticle_name(name);
-                article.setArticle_type(articleType);
-                article.setDescription(description);
-                article.setPrice(price);
-                article.setCategory(category);
-                return articleRepository.save(article);
             }
+            if (articleType != null) {
+                article.setArticle_type(articleType);
+            }
+            if (description != null) {
+                article.setDescription(description);
+            }
+            if (price != null) {
+                article.setPrice(price);
+            }
+            if (categoryId != null) {
+                Category category = categoryRepository.findById(categoryId).orElse(null);
+                if (category != null) {
+                    article.setCategory(category);
+                }
+            }
+            return articleRepository.save(article);
         }
         return null;
     }
