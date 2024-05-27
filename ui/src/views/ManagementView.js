@@ -90,7 +90,7 @@ const ManagementView = () => {
             }
           />
         </Sidebar>
-        <div className="overflow-y-auto p-8 flex flex-col gap-10">
+        <div className="flex-1 overflow-y-auto p-8 flex flex-col gap-10 mb-12">
           <div
             id="howdy"
             className="flex items-start gap-5 border-t-4 p-4 border-blue-300 bg-blue-50"
