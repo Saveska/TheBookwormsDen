@@ -60,6 +60,7 @@ public class ArticleController {
         return ResponseEntity.badRequest().build();
     }
 
+
     @PostMapping("/articles/{articleId}/update")
     public ResponseEntity<Article> updateArticle(
             @PathVariable Long articleId,
@@ -100,7 +101,17 @@ public class ArticleController {
     public ResponseEntity<?> deleteCategory(@PathVariable Long categoryId) {
         categoryService.deleteCategory(categoryId);
         return ResponseEntity.ok().build();
+
+
     }
 
-}
+    @DeleteMapping("/articles/delete/{id}")
+    public ResponseEntity deleteById(@PathVariable Long id) {
+        articleService.deleteArticleById(id);
+        Article deletedOrder = this.articleService.getArticleById(id);
+        if (deletedOrder == null)
+            return ResponseEntity.ok().build();
+        return ResponseEntity.badRequest().build();
 
+    }
+}

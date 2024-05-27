@@ -64,4 +64,9 @@ public class ArticleServiceImplementation implements ArticleService {
     }
 
 
+
+    public void deleteArticleById(Long id) {
+        this.articleRepository.deleteById(id);
+    }
+
 }
