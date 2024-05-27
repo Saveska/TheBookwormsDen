@@ -16,7 +16,7 @@ const BookCard = ({ book }) => {
             <h5 className="text-xl font-semibold tracking-tight text-gray-900">
               {book.title}
             </h5>
-            <h6 className="text-xl font-semibold tracking-tight text-gray-500">
+            <h6 className="text-xl tracking-tight text-gray-500">
               {book.author}
             </h6>
           </div>
@@ -24,14 +24,13 @@ const BookCard = ({ book }) => {
             <div className="flex items-center space-x-1 rtl:space-x-reverse">
               {/* SVG Icons */}
             </div>
-            <span className="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded">
+            <span className="text-xs">Avg. rating:</span>
+            <span className="bg-green-100 text-green-800 text-xs px-2.5 py-0.5 rounded ms-1">
               5.0
             </span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-3xl font-bold text-gray-900">
-              ${book.price}
-            </span>
+            <span className="text-3xl text-gray-900">${book.price}</span>
             <AddToCartButton onClick={null} />
           </div>
         </div>
