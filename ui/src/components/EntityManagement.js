@@ -9,21 +9,21 @@ export function ArticleIntro() {
       </h1>
       <p className="font-normal text-gray-500 mb-5">
         The following actions are available for the{" "}
-        <span className="font-medium">Article</span> entity:
+        <span className="font-semibold">Article</span> entity:
       </p>
       <ul className="list-disc list-inside">
         <li>You can create new Articles which users can purchase</li>
         <li>
           You can edit an Article's title, author, price and description
           (changes will be propagated to existing{" "}
-          <span className="font-medium">Wishlists</span> and{" "}
-          <span className="font-medium">Orders</span> which contain that
+          <span className="font-semibold">Wishlists</span> and{" "}
+          <span className="font-semibold">Orders</span> which contain that
           Article)
         </li>
         <li>
           You can delete Articles (which will remove them from all containing{" "}
-          <span className="font-medium">Orders</span> and{" "}
-          <span className="font-medium">Wishlists</span>)
+          <span className="font-semibold">Orders</span> and{" "}
+          <span className="font-semibold">Wishlists</span>)
         </li>
       </ul>
     </div>
@@ -65,7 +65,7 @@ export function ArticleTable() {
               <tr className="bg-white" key={book.id}>
                 <th
                   scope="row"
-                  className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
+                  className="px-6 py-4 font-semibold text-gray-900 whitespace-nowrap"
                 >
                   {book.id}
                 </th>
@@ -79,13 +79,13 @@ export function ArticleTable() {
                 <td className="flex items-center px-6 py-4">
                   <a
                     href="#"
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    className="font-semibold text-blue-600 hover:underline"
                   >
                     Edit
                   </a>
                   <a
                     href="#"
-                    className="font-medium text-red-600 dark:text-red-500 hover:underline ms-3"
+                    className="font-semibold text-red-600 hover:underline ms-3"
                   >
                     Remove
                   </a>

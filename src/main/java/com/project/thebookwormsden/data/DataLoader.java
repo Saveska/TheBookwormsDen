@@ -9,9 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -69,11 +67,15 @@ public class DataLoader implements ApplicationRunner {
 
         Wishlist wishlist1 = new Wishlist();
         wishlist1.setUser(user1);
-        wishlist1.setArticles(new HashSet<>(Set.of(article1)));
+        List<Article> list1 = new ArrayList<>();
+        list1.add(article1);
+        wishlist1.setArticles(list1);
 
         Wishlist wishlist2 = new Wishlist();
         wishlist2.setUser(user2);
-        wishlist2.setArticles(new HashSet<>(Set.of(article2)));
+        List<Article> list2 = new ArrayList<>();
+        list2.add(article2);
+        wishlist2.setArticles(list2);
 
         wishlistRepository.saveAll(List.of(wishlist1, wishlist2));
 

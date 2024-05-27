@@ -13,7 +13,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping()
+@RequestMapping("/api")
 public class UserController {
     private final UserService userService;
     private final PasswordEncoder passwordEncoder;

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,8 +18,14 @@ public class Wishlist implements Serializable {
     @OneToOne
     private User user;
 
-    @ManyToMany(mappedBy = "wishlists")
-    private Set<Article> articles;
+    @ManyToMany
+    @JoinTable(
+            name = "wishlist_article",
+            joinColumns = @JoinColumn(name = "wishlist_id"),
+            inverseJoinColumns = @JoinColumn(name = "article_id")
+    )
+    private List<Article> articles;
+    Double totalPrice;
 
     public Wishlist() {}
 }
