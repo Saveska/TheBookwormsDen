@@ -29,7 +29,7 @@ const CategoryBar = ({ setCategoryFilter, dynamicStyles }) => {
             className={
               category === activeCategory
                 ? "w-full text-white bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 hover:bg-gray-900 rounded-full px-3 py-2 text-sm "
-                : "w-full text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 rounded-full px-3 py-2 text-sm"
+                : "w-full text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 rounded-full px-3 py-2 text-sm"
             }
           >
             {category}
@@ -43,7 +43,7 @@ const CategoryBar = ({ setCategoryFilter, dynamicStyles }) => {
           className={
             "" === activeCategory
               ? "w-full text-white bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-300 hover:bg-gray-900 rounded-full px-3 py-2 text-sm"
-              : "w-full text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 rounded-full px-3 py-2 text-sm"
+              : "w-full text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 focus:z-10 focus:ring-4 focus:ring-gray-100 rounded-full px-3 py-2 text-sm"
           }
         >
           All categories

@@ -34,7 +34,7 @@ const ByNameFilter = ({ searchQuery, setSearchQuery, dynamicStyles }) => {
         <input
           type="search"
           id="default-search"
-          className="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 focus:ring-blue-500 focus:border-blue-500 rounded-full"
+          className="outline-none block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 focus:ring-0 focus:border-pink-600 rounded-full"
           value={searchQuery}
           onChange={handleChange}
           placeholder="Filter by name..."
