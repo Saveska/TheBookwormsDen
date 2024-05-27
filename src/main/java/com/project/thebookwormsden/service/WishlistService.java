@@ -7,6 +7,8 @@ import java.util.List;
 
 public interface WishlistService {
 
+    List<Wishlist> getAllWishlists();
+
     Wishlist getWishlistForUser(Long userId) throws UserNotFoundException;
 
     void removeArticleFromWishlist(Long userId, Long articleId) throws UserNotFoundException;

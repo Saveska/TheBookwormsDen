@@ -6,6 +6,8 @@ import com.project.thebookwormsden.service.WishlistService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/wishlist")
 public class WishlistController {
@@ -14,6 +16,12 @@ public class WishlistController {
 
     public WishlistController(WishlistService wishlistService) {
         this.wishlistService = wishlistService;
+    }
+
+    @GetMapping("/all")
+    public ResponseEntity<List<Wishlist>> getAllWishlists() {
+        List<Wishlist> wishlists = wishlistService.getAllWishlists();
+        return ResponseEntity.ok(wishlists);
     }
 
     @GetMapping("/forUser/{userId}")
