@@ -26,4 +26,26 @@ public class CategoryServiceImplementation implements CategoryService {
         return categoryRepository.findById(categoryId).orElse(null);
     }
 
+    @Override
+    public Category createCategory(String categoryName) {
+        Category category = new Category();
+        category.setCategory_name(categoryName);
+        return categoryRepository.save(category);
+    }
+
+    @Override
+    public Category updateCategory(Long categoryId, String categoryName) {
+        Category category = categoryRepository.findById(categoryId).orElse(null);
+        if (category != null) {
+            category.setCategory_name(categoryName);
+            return categoryRepository.save(category);
+        }
+        return null;
+    }
+
+    @Override
+    public void deleteCategory(Long categoryId) {
+        categoryRepository.deleteById(categoryId);
+    }
+
 }

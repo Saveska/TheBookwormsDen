@@ -10,6 +10,8 @@ import com.project.thebookwormsden.repository.WishlistRepository;
 import com.project.thebookwormsden.service.WishlistService;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class WishlistServiceImplementation implements WishlistService {
 
@@ -23,6 +25,11 @@ public class WishlistServiceImplementation implements WishlistService {
         this.userRepository = userRepository;
         this.articleRepository = articleRepository;
         this.wishlistRepository = wishlistRepository;
+    }
+
+    @Override
+    public List<Wishlist> getAllWishlists() {
+        return wishlistRepository.findAll();
     }
 
     @Override

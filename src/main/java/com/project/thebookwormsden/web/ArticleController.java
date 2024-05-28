@@ -1,6 +1,7 @@
 package com.project.thebookwormsden.web;
 
 import com.project.thebookwormsden.model.Article;
+import com.project.thebookwormsden.model.Category;
 import com.project.thebookwormsden.model.enums.ArticleType;
 import com.project.thebookwormsden.service.ArticleService;
 import com.project.thebookwormsden.service.CategoryService;
@@ -59,5 +60,58 @@ public class ArticleController {
         return ResponseEntity.badRequest().build();
     }
 
-}
 
+    @PostMapping("/articles/{articleId}/update")
+    public ResponseEntity<Article> updateArticle(
+            @PathVariable Long articleId,
+            @RequestParam String name,
+            @RequestParam ArticleType articleType,
+            @RequestParam String description,
+            @RequestParam Double price,
+            @RequestParam Long categoryId) {
+
+        Article updatedArticle = articleService.updateArticle(articleId, name, articleType, description, price, categoryId);
+        if (updatedArticle != null) {
+            return ResponseEntity.ok(updatedArticle);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @PostMapping("/categories/add")
+    public ResponseEntity<Category> createCategory(@RequestParam String categoryName) {
+        Category createdCategory = categoryService.createCategory(categoryName);
+        return ResponseEntity.ok(createdCategory);
+    }
+
+    @PostMapping("/categories/{categoryId}/update")
+    public ResponseEntity<Category> updateCategory(
+            @PathVariable Long categoryId,
+            @RequestParam String categoryName) {
+
+        Category updatedCategory = categoryService.updateCategory(categoryId, categoryName);
+        if (updatedCategory != null) {
+            return ResponseEntity.ok(updatedCategory);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/categories/{categoryId}/delete")
+    public ResponseEntity<?> deleteCategory(@PathVariable Long categoryId) {
+        categoryService.deleteCategory(categoryId);
+        return ResponseEntity.ok().build();
+
+
+    }
+
+    @DeleteMapping("/articles/delete/{id}")
+    public ResponseEntity deleteById(@PathVariable Long id) {
+        articleService.deleteArticleById(id);
+        Article deletedOrder = this.articleService.getArticleById(id);
+        if (deletedOrder == null)
+            return ResponseEntity.ok().build();
+        return ResponseEntity.badRequest().build();
+
+    }
+}

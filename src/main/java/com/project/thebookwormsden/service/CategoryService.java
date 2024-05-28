@@ -9,4 +9,10 @@ public interface CategoryService {
     List<Category> getAllCategories();
 
     Category getCategoryById(Long categoryId);
+
+    Category createCategory(String categoryName);
+
+    Category updateCategory(Long categoryId, String categoryName);
+
+    void deleteCategory(Long categoryId);
 }
