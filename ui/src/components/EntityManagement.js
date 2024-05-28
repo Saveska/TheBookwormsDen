@@ -6,6 +6,7 @@ import {
   EditArticleModal,
   NewArticleModal,
   DeleteArticleModal,
+  EditOrderModal,
 } from "./EntityManagementModals";
 
 export function ArticleIntro() {
@@ -194,19 +195,19 @@ export function ArticleTable() {
               </tr>
             );
           })}
-          <EditArticleModal
-            isOpen={isEditModalOpen}
-            onClose={() => setIsEditModalOpen(false)}
-            existingArticle={selectedBook}
-            onEditBook={handleEditBook}
-          />
-          <DeleteArticleModal
-            isOpen={isDeleteModalOpen}
-            onClose={() => setIsDeleteModalOpen(false)}
-            onDelete={handleDeleteBook}
-          />
         </tbody>
       </table>
+      <EditArticleModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        existingArticle={selectedBook}
+        onEditBook={handleEditBook}
+      />
+      <DeleteArticleModal
+        isOpen={isDeleteModalOpen}
+        onClose={() => setIsDeleteModalOpen(false)}
+        onDelete={handleDeleteBook}
+      />
     </div>
   );
 }
@@ -222,11 +223,6 @@ export function OrderIntro() {
         <span className="font-semibold">Order</span> entity:
       </p>
       <ul className="list-disc list-inside text-gray-500">
-        <li>
-          You can edit the list of{" "}
-          <span className="font-semibold">Articles</span> a{" "}
-          <span className="font-semibold">User</span> has added to his Order
-        </li>
         <li>You can edit the status of the Order</li>
       </ul>
     </div>
@@ -239,6 +235,21 @@ export function OrderTable() {
     const storedOrderData = JSON.parse(localStorage.getItem("orders")) || [];
     setOrderData(storedOrderData);
   }, []);
+
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const [selectedOrder, setSelectedOrder] = useState(null);
+  const handleEditClick = (order) => {
+    setSelectedOrder(order);
+    setIsEditModalOpen(true);
+  };
+  const handleEditOrder = (updatedOrder) => {
+    const updatedOrdersData = ordersData.map((order) =>
+      order.id === updatedOrder.id ? updatedOrder : order
+    );
+    setOrderData(updatedOrdersData);
+    localStorage.setItem("orders", JSON.stringify(updatedOrdersData));
+  };
+
   return (
     <div className="relative">
       <table className="w-full text-sm text-left rtl:text-right text-gray-500">
@@ -286,6 +297,7 @@ export function OrderTable() {
                 <td className="px-6 py-4">{order.status}</td>
                 <td className="flex items-center px-6 py-4">
                   <a
+                    onClick={() => handleEditClick(order)}
                     href="#"
                     className="font-semibold text-blue-600 hover:underline"
                   >
@@ -297,6 +309,12 @@ export function OrderTable() {
           })}
         </tbody>
       </table>
+      <EditOrderModal
+        isOpen={isEditModalOpen}
+        onClose={() => setIsEditModalOpen(false)}
+        existingOrder={selectedOrder}
+        onEditOrder={handleEditOrder}
+      />
     </div>
   );
 }
@@ -308,16 +326,8 @@ export function UserIntro() {
         Howdy, admin
       </h1>
       <p className="font-normal text-gray-500 mb-5">
-        The following actions are available for the{" "}
-        <span className="font-semibold">User</span> entity:
+        No actions available here
       </p>
-      <ul className="list-disc list-inside text-gray-500">
-        <li>
-          You can remove Users (which will cascade to all{" "}
-          <span className="font-semibold">Orders</span> and{" "}
-          <span className="font-semibold">Wishlists</span> associated with them)
-        </li>
-      </ul>
     </div>
   );
 }
@@ -346,9 +356,6 @@ export function UserTable() {
             <th scope="col" className="px-6 py-3">
               Phone number
             </th>
-            <th scope="col" className="px-6 py-3">
-              Action
-            </th>
           </tr>
         </thead>
         <tbody>
@@ -366,14 +373,6 @@ export function UserTable() {
                 <td className="px-6 py-4">{user.lastName}</td>
                 <td className="px-6 py-4">{user.role}</td>
                 <td className="px-6 py-4">{user.phoneNumber}</td>
-                <td className="flex items-center px-6 py-4">
-                  <a
-                    href="#"
-                    className="font-semibold text-red-600 hover:underline"
-                  >
-                    Remove
-                  </a>
-                </td>
               </tr>
             );
           })}

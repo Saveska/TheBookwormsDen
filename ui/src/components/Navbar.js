@@ -1,12 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { NoAuthPopover } from "./Popover";
+import { CartPopover, EmptyPopover, NoAuthPopover } from "./Popover";
 import { Popover } from "react-tiny-popover";
 
 const Navbar = ({ dynamicStyles }) => {
   const navigate = useNavigate();
   const [isWishlistPopoverOpen, setIsWishlistPopoverOpen] = useState(false);
   const [isCartPopoverOpen, setIsCartPopoverOpen] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(false);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    const storedAuth = JSON.parse(localStorage.getItem("auth")) || [];
+    setLoggedIn(storedAuth[0].loggedIn);
+
+    const storedCart = JSON.parse(localStorage.getItem("cart")) || [];
+    setCartItems(storedCart);
+
+    window.addEventListener("storage", () => {
+      // When local storage changes, dump the list to
+      // the console.
+      setCartItems(JSON.parse(localStorage.getItem("cart")) || []);
+    });
+  }, []);
+
+  const handleLogout = () => {
+    setLoggedIn(false);
+    localStorage.setItem("auth", JSON.stringify([{ loggedIn: false }]));
+  };
 
   return (
     <nav
@@ -41,9 +63,13 @@ const Navbar = ({ dynamicStyles }) => {
           align="center"
           padding={24}
           onClickOutside={() => setIsWishlistPopoverOpen(false)}
-          content={({ position, childRect, popoverRect }) => (
-            <NoAuthPopover entityName="wishlist" navigate={navigate} />
-          )}
+          content={({ position, childRect, popoverRect }) =>
+            loggedIn ? (
+              <EmptyPopover entityName="wishlist" />
+            ) : (
+              <NoAuthPopover entityName="wishlist" navigate={navigate} />
+            )
+          }
         >
           <button
             type="button"
@@ -65,7 +91,7 @@ const Navbar = ({ dynamicStyles }) => {
                 d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"
               />
             </svg>
-            Wishlist
+            Wishlist {loggedIn ? "(0)" : ""}
           </button>
         </Popover>
         <Popover
@@ -74,9 +100,17 @@ const Navbar = ({ dynamicStyles }) => {
           align="center"
           padding={24}
           onClickOutside={() => setIsCartPopoverOpen(false)}
-          content={({ position, childRect, popoverRect }) => (
-            <NoAuthPopover entityName="cart" navigate={navigate} />
-          )}
+          content={({ position, childRect, popoverRect }) =>
+            loggedIn ? (
+              cartItems.length === 0 ? (
+                <EmptyPopover entityName="cart" />
+              ) : (
+                <CartPopover books={cartItems} navigate={navigate} />
+              )
+            ) : (
+              <NoAuthPopover entityName="cart" navigate={navigate} />
+            )
+          }
         >
           <button
             type="button"
@@ -98,12 +132,12 @@ const Navbar = ({ dynamicStyles }) => {
                 d="M5 4h1.5L9 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-8.5-3h9.25L19 7H7.312"
               />
             </svg>
-            Cart
+            Cart {loggedIn ? `(${cartItems.length})` : ""}
           </button>
         </Popover>
         <button
           type="button"
-          onClick={() => navigate("/auth")}
+          onClick={() => (loggedIn ? handleLogout() : navigate("/auth"))}
           className="inline-flex items-center text-sm hover:underline"
         >
           <svg
@@ -121,7 +155,7 @@ const Navbar = ({ dynamicStyles }) => {
               d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"
             />
           </svg>
-          Login
+          {loggedIn ? "Logout" : "Login"}
         </button>
       </div>
     </nav>

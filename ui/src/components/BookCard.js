@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import SingleBookView from "./SingleBookView";
-import { AddToCartButton } from "./AddToCartButton";
+import { AddToCartButton, AddToWishlistButton } from "./AddToButtons";
 
 const BookCard = ({ book }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -8,11 +8,27 @@ const BookCard = ({ book }) => {
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const storedAuth = JSON.parse(localStorage.getItem("auth")) || [];
+    setLoggedIn(storedAuth[0].loggedIn);
+  }, []);
+
+  const handleAddToCart = (book) => {
+    if (loggedIn) {
+      let updatedCart = JSON.parse(localStorage.getItem("cart")) || [];
+      updatedCart.push(book);
+      localStorage.setItem("cart", JSON.stringify(updatedCart));
+      window.dispatchEvent(new Event("storage"));
+    }
+  };
+
   return (
-    <div className="cursor-pointer book" onClick={openModal}>
-      <div className="bg-gray-100">
+    <div className="book">
+      <div className="bg-gray-50">
         <div className="p-5">
-          <div>
+          <div onClick={openModal} className="hover:underline cursor-pointer">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900">
               {book.title}
             </h5>
@@ -31,7 +47,8 @@ const BookCard = ({ book }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-3xl text-gray-900">${book.price}</span>
-            <AddToCartButton onClick={null} />
+            <AddToWishlistButton onClick={null} />
+            <AddToCartButton handleClick={() => handleAddToCart(book)} />
           </div>
         </div>
       </div>

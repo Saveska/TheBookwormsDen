@@ -15,7 +15,7 @@ export const NewArticleModal = ({ isOpen, onClose, onAddBook }) => {
     const booksData = JSON.parse(localStorage.getItem("books")) || [];
 
     const newBook = {
-      id: booksData.length + 1,
+      id: Math.max(...booksData.map((book) => book.id)) + 1,
       title,
       author,
       category,
@@ -240,7 +240,7 @@ export const EditArticleModal = ({
       >
         <div className="flex items-start justify-between mb-8">
           <div>
-            <h2 className="text-xl text-gray-900">Add a new Article</h2>
+            <h2 className="text-xl text-gray-900">Edit this Article</h2>
           </div>
           <button
             className="text-gray-400 transition hover:text-gray-600"
@@ -406,6 +406,106 @@ export const DeleteArticleModal = ({ isOpen, onClose, onDelete }) => {
             Yes, Delete
           </button>
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const EditOrderModal = ({
+  isOpen,
+  onClose,
+  existingOrder,
+  onEditOrder,
+}) => {
+  const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    if (existingOrder) {
+      setStatus(existingOrder.status);
+    }
+  }, [existingOrder]);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const updatedOrder = {
+      ...existingOrder,
+      status,
+    };
+
+    // update state in OrderTable
+    onEditOrder(updatedOrder);
+
+    onClose();
+  };
+
+  return (
+    <div
+      className="fixed inset-0 z-10 flex items-center justify-center w-screen h-screen bg-black bg-opacity-50 close-modal"
+      onClick={(e) => {
+        onClose();
+        e.stopPropagation();
+      }}
+    >
+      <div
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        className="relative z-50 w-full max-w-2xl mx-auto bg-white shadow-lg p-10"
+      >
+        <div className="flex items-start justify-between mb-8">
+          <div>
+            <h2 className="text-xl text-gray-900">Edit this Order</h2>
+          </div>
+          <button
+            className="text-gray-400 transition hover:text-gray-600"
+            onClick={onClose}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+        </div>
+        <form className="mx-auto" onSubmit={handleSubmit}>
+          <div className="relative z-0 w-full mb-5 group">
+            <input
+              type="text"
+              name="floating_status"
+              id="floating_status"
+              className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-pink-600 peer"
+              placeholder=" "
+              value={status}
+              onChange={(e) => setStatus(e.target.value)}
+              required
+            />
+            <label
+              htmlFor="floating_status"
+              className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-pink-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >
+              Status
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            className="mt-5 text-gray-900 bg-white border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 font-medium rounded-full text-sm px-5 py-2.5"
+          >
+            Submit
+          </button>
+        </form>
       </div>
     </div>
   );

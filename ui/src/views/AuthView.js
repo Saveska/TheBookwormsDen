@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bookIllustration from "../images/book-illustration.jpg";
 import Navbar from "../components/Navbar";
 import { LoginForm, RegisterForm } from "../components/AuthForms";
+import { useNavigate } from "react-router-dom";
 
 const AuthView = () => {
+  const navigate = useNavigate();
   const [showRegister, setShowRegister] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const storedAuth = JSON.parse(localStorage.getItem("auth")) || [];
+    setLoggedIn(storedAuth[0].loggedIn);
+  }, []);
+
+  const handleLogin = () => {
+    setLoggedIn(true);
+    localStorage.setItem("auth", JSON.stringify([{ loggedIn: true }]));
+    navigate("/");
+  };
 
   return (
     <div>
@@ -40,7 +54,11 @@ const AuthView = () => {
               </>
             )}
           </div>
-          {showRegister ? <RegisterForm /> : <LoginForm />}
+          {showRegister ? (
+            <RegisterForm />
+          ) : (
+            <LoginForm onClick={handleLogin} />
+          )}
         </div>
         <div className="flex-1 w-full md:w-1/2 p-4">
           <img

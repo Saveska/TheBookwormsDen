@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import booksData from "../data/booksData";
-import { AddToCartButton } from "./AddToCartButton";
+import { AddToCartButton } from "./AddToButtons";
 
 const SingleBookView = ({ bookId, isOpen, onClose }) => {
   const [bookData, setBookData] = useState(null);
@@ -44,7 +44,7 @@ const SingleBookView = ({ bookId, isOpen, onClose }) => {
           <div role="status">
             <svg
               aria-hidden="true"
-              class="w-12 h-12 text-gray-200 animate-spin fill-pink-600"
+              className="w-12 h-12 text-gray-200 animate-spin fill-pink-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -58,7 +58,7 @@ const SingleBookView = ({ bookId, isOpen, onClose }) => {
                 fill="currentFill"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </div>
       );

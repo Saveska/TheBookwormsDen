@@ -8,6 +8,7 @@ import AuthView from "./views/AuthView";
 import ManagementView from "./views/ManagementView";
 
 import Setup from "./components/Setup";
+import { CheckoutView } from "./views/CheckoutView";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +19,7 @@ root.render(
         <Route path="/" element={<MainView />} />
         <Route path="/auth" element={<AuthView />} />
         <Route path="/management" element={<ManagementView />} />
+        <Route path="/checkout" element={<CheckoutView />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
