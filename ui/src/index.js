@@ -7,10 +7,13 @@ import MainView from "./views/MainView";
 import AuthView from "./views/AuthView";
 import ManagementView from "./views/ManagementView";
 
+import Setup from "./components/Setup";
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Setup />
       <Routes>
         <Route path="/" element={<MainView />} />
         <Route path="/auth" element={<AuthView />} />

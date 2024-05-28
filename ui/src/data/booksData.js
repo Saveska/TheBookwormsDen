@@ -4,7 +4,7 @@ const booksData = [
     title: "Harry Potter",
     author: "J.K. Rowling",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -13,7 +13,7 @@ const booksData = [
     title: "1984",
     author: "George Orwell",
     category: "Fiction",
-    price: 100,
+    price: 99.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -22,7 +22,7 @@ const booksData = [
     title: "The Great Gatsby",
     author: "F. Scott Fitzgerald",
     category: "Fiction",
-    price: 100,
+    price: 99.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -31,7 +31,7 @@ const booksData = [
     title: "Pride and Prejudice",
     author: "Jane Austen",
     category: "Fiction",
-    price: 100,
+    price: 99.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -40,7 +40,7 @@ const booksData = [
     title: "To Kill a Mockingbird",
     author: "Harper Lee",
     category: "Non-fiction",
-    price: 100,
+    price: 69.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -49,7 +49,7 @@ const booksData = [
     title: "Sapiens: A Brief History of Humankind",
     author: "Yuval Noah Harari",
     category: "Non-fiction",
-    price: 100,
+    price: 69.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -58,7 +58,7 @@ const booksData = [
     title: "Educated",
     author: "Tara Westover",
     category: "Non-fiction",
-    price: 100,
+    price: 69.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -67,7 +67,7 @@ const booksData = [
     title: "The Subtle Art of Not Giving a F*ck",
     author: "Mark Manson",
     category: "Non-fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -76,7 +76,7 @@ const booksData = [
     title: "The Catcher in the Rye",
     author: "J.D. Salinger",
     category: "Fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -85,7 +85,7 @@ const booksData = [
     title: "The Hobbit",
     author: "J.R.R. Tolkien",
     category: "Fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -94,7 +94,7 @@ const booksData = [
     title: "The Alchemist",
     author: "Paulo Coelho",
     category: "Fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -103,7 +103,7 @@ const booksData = [
     title: "Crime and Punishment",
     author: "Fyodor Dostoevsky",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -112,7 +112,7 @@ const booksData = [
     title: "Moby-Dick",
     author: "Herman Melville",
     category: "Fiction",
-    price: 100,
+    price: 29.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -121,7 +121,7 @@ const booksData = [
     title: "The Odyssey",
     author: "Homer",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -130,7 +130,7 @@ const booksData = [
     title: "The Lord of the Rings",
     author: "J.R.R. Tolkien",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -139,7 +139,7 @@ const booksData = [
     title: "Brave New World",
     author: "Aldous Huxley",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -148,7 +148,7 @@ const booksData = [
     title: "The Picture of Dorian Gray",
     author: "Oscar Wilde",
     category: "Fiction",
-    price: 100,
+    price: 99.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -157,7 +157,7 @@ const booksData = [
     title: "Anna Karenina",
     author: "Leo Tolstoy",
     category: "Fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -166,7 +166,7 @@ const booksData = [
     title: "The Brothers Karamazov",
     author: "Fyodor Dostoevsky",
     category: "Fiction",
-    price: 100,
+    price: 79.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -175,7 +175,7 @@ const booksData = [
     title: "The Count of Monte Cristo",
     author: "Alexandre Dumas",
     category: "Fiction",
-    price: 100,
+    price: 79.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -184,7 +184,7 @@ const booksData = [
     title: "Frankenstein",
     author: "Mary Shelley",
     category: "Fiction",
-    price: 100,
+    price: 79.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -193,7 +193,7 @@ const booksData = [
     title: "The Adventures of Huckleberry Finn",
     author: "Mark Twain",
     category: "Fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -202,7 +202,7 @@ const booksData = [
     title: "War and Peace",
     author: "Leo Tolstoy",
     category: "Fiction",
-    price: 100,
+    price: 39.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -211,7 +211,7 @@ const booksData = [
     title: "The Road",
     author: "Cormac McCarthy",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -220,7 +220,7 @@ const booksData = [
     title: "The Stranger",
     author: "Albert Camus",
     category: "Fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -229,7 +229,7 @@ const booksData = [
     title: "One Hundred Years of Solitude",
     author: "Gabriel García Márquez",
     category: "Fiction",
-    price: 100,
+    price: 69.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -238,7 +238,7 @@ const booksData = [
     title: "The Bell Jar",
     author: "Sylvia Plath",
     category: "Fiction",
-    price: 100,
+    price: 99.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -247,7 +247,7 @@ const booksData = [
     title: "The Road Less Traveled",
     author: "M. Scott Peck",
     category: "Non-fiction",
-    price: 100,
+    price: 69.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -256,7 +256,7 @@ const booksData = [
     title: "Man's Search for Meaning",
     author: "Viktor E. Frankl",
     category: "Non-fiction",
-    price: 100,
+    price: 19.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },
@@ -265,7 +265,7 @@ const booksData = [
     title: "Thinking, Fast and Slow",
     author: "Daniel Kahneman",
     category: "Non-fiction",
-    price: 100,
+    price: 59.9,
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vestibulum purus sed finibus euismod. Curabitur accumsan pretium bibendum. Proin lacinia et turpis in laoreet. Praesent dapibus rhoncus condimentum. Sed accumsan ligula efficitur gravida molestie. Ut finibus varius ex ac scelerisque. Integer posuere, sem eu cursus aliquam, nulla tellus varius lectus, et lobortis urna velit eget enim. In consectetur elit id bibendum imperdiet. Nunc felis sem, fringilla et est non, iaculis tempor nisl. Phasellus enim urna, finibus nec quam vitae, tristique interdum elit. Sed ac malesuada arcu. Mauris dolor diam, posuere eu ante et, fermentum suscipit leo. Donec ultrices ultricies felis in porta.",
   },

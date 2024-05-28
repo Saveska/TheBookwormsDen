@@ -1,14 +1,19 @@
 import React, { useState, useEffect } from "react";
 import BookCard from "./BookCard";
-import booksData from "../data/booksData";
 import PaginationButtons from "./PaginationButtons";
 
 const BookGrid = ({ category, search, dynamicStyles }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 18;
+  const [booksData, setBooksData] = useState([]);
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [showPagination, setShowPagination] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const storedBooksData = JSON.parse(localStorage.getItem("books")) || [];
+    setBooksData(storedBooksData);
+  }, []);
 
   useEffect(() => {
     const newFilteredBooks = booksData.filter((book) => {
@@ -19,7 +24,7 @@ const BookGrid = ({ category, search, dynamicStyles }) => {
     });
     setFilteredBooks(newFilteredBooks);
     setCurrentPage(1);
-  }, [category, search]);
+  }, [category, search, booksData]);
 
   useEffect(() => {
     const handleScroll = () => {

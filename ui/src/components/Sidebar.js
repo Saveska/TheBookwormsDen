@@ -3,7 +3,7 @@ import { createContext, useContext, useState } from "react";
 const SidebarContext = createContext();
 
 export function Sidebar({ children, title }) {
-  const [expanded, setExpanded] = useState(true);
+  const [expanded, setExpanded] = useState(false);
   return (
     <>
       <aside>
@@ -64,11 +64,12 @@ export function Sidebar({ children, title }) {
   );
 }
 
-export function SidebarItem({ icon, text, active, alert }) {
+export function SidebarItem({ icon, text, active, alert, onClick }) {
   const { expanded } = useContext(SidebarContext);
   return (
     <li
-      className={`relative flex items-center py-2 px-3 my-1 cursor-pointer transition-colors group ${
+      onClick={onClick}
+      className={`relative flex items-center py-2 px-3 my-1 cursor-pointer transition-colors group z-10 ${
         active
           ? "bg-gradient-to-tr from-pink-200 to-pink-100 text-pink-800"
           : "hover:bg-pink-50 text-gray-600"

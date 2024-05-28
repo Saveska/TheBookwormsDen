@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import { Sidebar, SidebarItem } from "../components/Sidebar";
-import { ArticleIntro, ArticleTable } from "../components/EntityManagement";
+import {
+  ArticleIntro,
+  ArticleTable,
+  OrderIntro,
+  OrderTable,
+  UserIntro,
+  UserTable,
+  WishlistIntro,
+  WishlistTable,
+} from "../components/EntityManagement";
 
 const ManagementView = () => {
+  const [activeEntity, setActiveEntity] = useState(() => "article");
   return (
     <div className="h-screen overflow-y-hidden">
       <Navbar dynamicStyles="sticky top-0 z-10" />
@@ -28,7 +38,8 @@ const ManagementView = () => {
                 />
               </svg>
             }
-            active
+            onClick={() => setActiveEntity("article")}
+            active={activeEntity === "article"}
           />
           <SidebarItem
             text="Orders"
@@ -49,6 +60,8 @@ const ManagementView = () => {
                 />
               </svg>
             }
+            onClick={() => setActiveEntity("order")}
+            active={activeEntity === "order"}
           />
           <SidebarItem
             text="Wishlists"
@@ -69,6 +82,8 @@ const ManagementView = () => {
                 />
               </svg>
             }
+            onClick={() => setActiveEntity("wishlist")}
+            active={activeEntity === "wishlist"}
           />
           <SidebarItem
             text="Users"
@@ -88,15 +103,17 @@ const ManagementView = () => {
                 />
               </svg>
             }
+            onClick={() => setActiveEntity("user")}
+            active={activeEntity === "user"}
           />
         </Sidebar>
-        <div className="flex-1 overflow-y-auto p-8 flex flex-col gap-10 mb-12">
+        <div className="flex-1 overflow-y-auto p-10 flex flex-col gap-10 mb-12">
           <div
             id="howdy"
             className="flex items-start gap-5 border-t-4 p-4 border-blue-300 bg-blue-50"
           >
             <svg
-              className="flex-shrink-0 w-4 h-4"
+              className="flex-shrink-0 w-5 h-5"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
@@ -104,9 +121,35 @@ const ManagementView = () => {
             >
               <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
             </svg>
-            <ArticleIntro />
+            {(() => {
+              switch (activeEntity) {
+                case "article":
+                  return <ArticleIntro />;
+                case "order":
+                  return <OrderIntro />;
+                case "user":
+                  return <UserIntro />;
+                case "wishlist":
+                  return <WishlistIntro />;
+                default:
+                  return null;
+              }
+            })()}
           </div>
-          <ArticleTable />
+          {(() => {
+            switch (activeEntity) {
+              case "article":
+                return <ArticleTable />;
+              case "order":
+                return <OrderTable />;
+              case "user":
+                return <UserTable />;
+              case "wishlist":
+                return <WishlistTable />;
+              default:
+                return null;
+            }
+          })()}
         </div>
       </div>
     </div>
