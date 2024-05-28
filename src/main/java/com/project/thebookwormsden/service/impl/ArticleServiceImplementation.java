@@ -5,6 +5,8 @@ import com.project.thebookwormsden.model.Category;
 import com.project.thebookwormsden.model.enums.ArticleType;
 import com.project.thebookwormsden.repository.ArticleRepository;
 import com.project.thebookwormsden.repository.CategoryRepository;
+import com.project.thebookwormsden.repository.OrderRepository;
+import com.project.thebookwormsden.repository.WishlistRepository;
 import com.project.thebookwormsden.service.ArticleService;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,14 @@ public class ArticleServiceImplementation implements ArticleService {
 
     private final ArticleRepository articleRepository;
     private final CategoryRepository categoryRepository;
+    private final OrderRepository orderRepository;
+    private final WishlistRepository wishlistRepository;
 
-    public ArticleServiceImplementation(ArticleRepository articleRepository, CategoryRepository categoryRepository) {
+    public ArticleServiceImplementation(ArticleRepository articleRepository, CategoryRepository categoryRepository, OrderRepository orderRepository, WishlistRepository wishlistRepository) {
         this.articleRepository = articleRepository;
         this.categoryRepository = categoryRepository;
+        this.orderRepository = orderRepository;
+        this.wishlistRepository = wishlistRepository;
     }
 
     @Override
@@ -75,8 +81,19 @@ public class ArticleServiceImplementation implements ArticleService {
     }
 
 
-
     public void deleteArticleById(Long id) {
+        Article article = this.getArticleById(id);
+
+        orderRepository.findByArticlesContaining(article)
+                .stream()
+                .peek(order -> order.getArticles().remove(article))
+                .forEach(orderRepository::save);
+
+        wishlistRepository.findByArticlesContaining(article)
+                .stream()
+                .peek(wishlist -> wishlist.getArticles().remove(article))
+                .forEach(wishlistRepository::save);
+
         this.articleRepository.deleteById(id);
     }
 
