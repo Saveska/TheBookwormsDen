@@ -15,11 +15,11 @@ export function ArticleIntro() {
       <h1 className="mb-4 text-xl leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
         Howdy, admin
       </h1>
-      <p className="font-normal text-gray-500 mb-5">
+      <p className="mb-5 font-normal text-gray-500">
         The following actions are available for the{" "}
         <span className="font-semibold">Article</span> entity:
       </p>
-      <ul className="list-disc list-inside text-gray-500">
+      <ul className="text-gray-500 list-disc list-inside">
         <li>You can create new Articles which users can purchase</li>
         <li>
           You can edit an Article's title, author, price and description
@@ -133,7 +133,7 @@ export function ArticleTable() {
           onAddBook={handleAddBook}
         />
       </div>
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      <table className="w-full text-sm text-left text-gray-500 rtl:text-right">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3">
@@ -218,11 +218,11 @@ export function OrderIntro() {
       <h1 className="mb-4 text-xl leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
         Howdy, admin
       </h1>
-      <p className="font-normal text-gray-500 mb-5">
+      <p className="mb-5 font-normal text-gray-500">
         The following actions are available for the{" "}
         <span className="font-semibold">Order</span> entity:
       </p>
-      <ul className="list-disc list-inside text-gray-500">
+      <ul className="text-gray-500 list-disc list-inside">
         <li>You can edit the status of the Order</li>
       </ul>
     </div>
@@ -252,7 +252,7 @@ export function OrderTable() {
 
   return (
     <div className="relative">
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      <table className="w-full text-sm text-left text-gray-500 rtl:text-right">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3">
@@ -325,7 +325,7 @@ export function UserIntro() {
       <h1 className="mb-4 text-xl leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
         Howdy, admin
       </h1>
-      <p className="font-normal text-gray-500 mb-5">
+      <p className="mb-5 font-normal text-gray-500">
         No actions available here
       </p>
     </div>
@@ -335,7 +335,7 @@ export function UserIntro() {
 export function UserTable() {
   return (
     <div className="relative">
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      <table className="w-full text-sm text-left text-gray-500 rtl:text-right">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3">
@@ -388,7 +388,7 @@ export function WishlistIntro() {
       <h1 className="mb-4 text-xl leading-none tracking-tight text-gray-900 md:text-2xl lg:text-3xl">
         Howdy, admin
       </h1>
-      <p className="font-normal text-gray-500 mb-5">
+      <p className="mb-5 font-normal text-gray-500">
         No actions available here
       </p>
     </div>
@@ -404,7 +404,7 @@ export function WishlistTable() {
   }, []);
   return (
     <div className="relative">
-      <table className="w-full text-sm text-left rtl:text-right text-gray-500">
+      <table className="w-full text-sm text-left text-gray-500 rtl:text-right">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50">
           <tr>
             <th scope="col" className="px-6 py-3">

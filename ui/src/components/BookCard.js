@@ -23,12 +23,20 @@ const BookCard = ({ book }) => {
       window.dispatchEvent(new Event("storage"));
     }
   };
+  const handleAddToWishlist = (book) => {
+    if (loggedIn) {
+      let updatedWishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+      updatedWishlist.push(book);
+      localStorage.setItem("wishlist", JSON.stringify(updatedWishlist));
+      window.dispatchEvent(new Event("storage"));
+    }
+  };
 
   return (
     <div className="book">
       <div className="bg-gray-50">
         <div className="p-5">
-          <div onClick={openModal} className="hover:underline cursor-pointer">
+          <div onClick={openModal} className="cursor-pointer hover:underline">
             <h5 className="text-xl font-semibold tracking-tight text-gray-900">
               {book.title}
             </h5>
@@ -47,7 +55,7 @@ const BookCard = ({ book }) => {
           </div>
           <div className="flex items-center justify-between">
             <span className="text-3xl text-gray-900">${book.price}</span>
-            <AddToWishlistButton onClick={null} />
+            <AddToWishlistButton handleClick={() => handleAddToWishlist(book)} />
             <AddToCartButton handleClick={() => handleAddToCart(book)} />
           </div>
         </div>
